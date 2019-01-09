@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		2627E6C021E5425E0021E72E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627E6BF21E5425E0021E72E /* AppDelegate.swift */; };
-		2627E6C221E5425E0021E72E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627E6C121E5425E0021E72E /* ViewController.swift */; };
-		2627E6C521E5425E0021E72E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2627E6C321E5425E0021E72E /* Main.storyboard */; };
 		2627E6C721E5425F0021E72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2627E6C621E5425F0021E72E /* Assets.xcassets */; };
 		2627E6CA21E5425F0021E72E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2627E6C821E5425F0021E72E /* LaunchScreen.storyboard */; };
+		2627E6D321E543620021E72E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627E6D221E543620021E72E /* ViewController.swift */; };
+		2627E6D521E543990021E72E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2627E6D421E543990021E72E /* UIViewExtension.swift */; };
+		26325E6821E675020037F827 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26325E6721E675020037F827 /* Pokemon.swift */; };
+		26325E6B21E677C50037F827 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26325E6A21E677C50037F827 /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2627E6BC21E5425E0021E72E /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2627E6BF21E5425E0021E72E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2627E6C121E5425E0021E72E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2627E6C421E5425E0021E72E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2627E6C621E5425F0021E72E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2627E6C921E5425F0021E72E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2627E6CB21E5425F0021E72E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2627E6D221E543620021E72E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2627E6D421E543990021E72E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		26325E6721E675020037F827 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		26325E6A21E677C50037F827 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		2627E6BE21E5425E0021E72E /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				2627E6D121E542E60021E72E /* Resources */,
+				2627E6D621E543BC0021E72E /* ViewController */,
+				26325E6921E675ED0037F827 /* Model */,
+				26325E6C21E677CA0037F827 /* ModelController */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		2627E6D121E542E60021E72E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				2627E6BF21E5425E0021E72E /* AppDelegate.swift */,
-				2627E6C121E5425E0021E72E /* ViewController.swift */,
-				2627E6C321E5425E0021E72E /* Main.storyboard */,
 				2627E6C621E5425F0021E72E /* Assets.xcassets */,
 				2627E6C821E5425F0021E72E /* LaunchScreen.storyboard */,
 				2627E6CB21E5425F0021E72E /* Info.plist */,
+				2627E6D421E543990021E72E /* UIViewExtension.swift */,
 			);
-			path = Calculator;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2627E6D621E543BC0021E72E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2627E6D221E543620021E72E /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		26325E6921E675ED0037F827 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26325E6721E675020037F827 /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26325E6C21E677CA0037F827 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				26325E6A21E677C50037F827 /* PokemonController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +162,6 @@
 			files = (
 				2627E6CA21E5425F0021E72E /* LaunchScreen.storyboard in Resources */,
 				2627E6C721E5425F0021E72E /* Assets.xcassets in Resources */,
-				2627E6C521E5425E0021E72E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +172,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2627E6C221E5425E0021E72E /* ViewController.swift in Sources */,
+				2627E6D521E543990021E72E /* UIViewExtension.swift in Sources */,
+				26325E6821E675020037F827 /* Pokemon.swift in Sources */,
+				2627E6D321E543620021E72E /* ViewController.swift in Sources */,
 				2627E6C021E5425E0021E72E /* AppDelegate.swift in Sources */,
+				26325E6B21E677C50037F827 /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2627E6C321E5425E0021E72E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2627E6C421E5425E0021E72E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2627E6C821E5425F0021E72E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,7 +316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D7Q6ZCPJ6Q;
-				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Calculator/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D7Q6ZCPJ6Q;
-				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Calculator/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

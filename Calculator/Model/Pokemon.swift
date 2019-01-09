@@ -8,6 +8,14 @@
 
 import Foundation
 
-class Pokemon {
+struct Pokemon: Decodable {
+    let sprites: Sprites
+}
+
+struct Sprites: Decodable {
+    let imageUrl: String
     
+    enum CodingKeys: String, CodingKey {
+        case imageUrl = "front_default"
+    }
 }
