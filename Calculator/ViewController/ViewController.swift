@@ -30,24 +30,43 @@ class ViewController: UIViewController {
         constrainBottomButtonStackView()
         //button functionatility
         oneButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        oneButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         twoButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        twoButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         threeButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        threeButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         fourButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        fourButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         fiveButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        fiveButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         sixButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        sixButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         sevenButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        sevenButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         eightButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        eightButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         nineButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        nineButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         zeroButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        zeroButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         clearButton.addTarget(self, action: #selector(clearButtonTapped(button:)), for: .touchUpInside)
+        clearButton.addTarget(self, action: #selector(specialCharacterUnTapped(button:)), for: .touchDown)
         decimalButton.addTarget(self, action: #selector(digits(button:)), for: .touchUpInside)
+        decimalButton.addTarget(self, action: #selector(digitsUnTapped(button:)), for: .touchDown)
         digimonButton.addTarget(self, action: #selector(digimonButtonTapped(button:)), for: .touchUpInside)
+        digimonButton.addTarget(self, action: #selector(specialCharacterUnTapped(button:)), for: .touchDown)
         plusButton.addTarget(self, action: #selector(operation(button:)), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(orangeButtonUnTapped(button:)), for: .touchDown)
         minusButton.addTarget(self, action: #selector(operation(button:)), for: .touchUpInside)
+        minusButton.addTarget(self, action: #selector(orangeButtonUnTapped(button:)), for: .touchDown)
         timesButton.addTarget(self, action: #selector(operation(button:)), for: .touchUpInside)
+        timesButton.addTarget(self, action: #selector(orangeButtonUnTapped(button:)), for: .touchDown)
         divisionButton.addTarget(self, action: #selector(operation(button:)), for: .touchUpInside)
+        divisionButton.addTarget(self, action: #selector(orangeButtonUnTapped(button:)), for: .touchDown)
         equalButton.addTarget(self, action: #selector(equalButtonPressed(button:)), for: .touchUpInside)
+        equalButton.addTarget(self, action: #selector(orangeButtonUnTapped(button:)), for: .touchDown)
         pokemonButton.addTarget(self, action: #selector(getPokemon(button:)), for: .touchUpInside)
+        pokemonButton.addTarget(self, action: #selector(specialCharacterUnTapped(button:)), for: .touchDown)
     }
     
     // MARK: - Views
@@ -291,6 +310,8 @@ class ViewController: UIViewController {
     // MARK: - Math Functions
     @objc func digits(button: UIButton) {
         guard let digit = button.currentTitle else { return }
+        button.backgroundColor = .darkGray
+        button.setTitleColor(.white, for: .normal)
         if isTypingANumber {
             let number = inputDisplayLabel.text ?? ""
             inputDisplayLabel.text = number + digit
@@ -300,7 +321,14 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func digitsUnTapped(button: UIButton){
+        button.backgroundColor = .white
+        button.setTitleColor(.darkGray, for: .normal)
+    }
+    
     @objc func clearButtonTapped(button: UIButton) {
+        button.backgroundColor = .lightGray
+        button.setTitleColor(.black, for: .normal)
         inputDisplayLabel.text = "0"
         isTypingANumber = false
         inputDisplayLabel.textColor = .white
@@ -311,11 +339,20 @@ class ViewController: UIViewController {
     }
     
     @objc func digimonButtonTapped(button: UIButton) {
+        button.backgroundColor = .lightGray
+        button.setTitleColor(.black, for: .normal)
         inputDisplayLabel.text = "Digimon, Really just use the Pokemon Button!"
         isTypingANumber = false
     }
     
+    @objc func specialCharacterUnTapped(button: UIButton){
+        button.backgroundColor = .black
+        button.setTitleColor(.lightGray, for: .normal)
+    }
+    
     @objc func operation(button: UIButton) {
+        button.backgroundColor = .orange
+        button.setTitleColor(.white, for: .normal)
         if let mathSign = button.currentTitle{
             switch mathSign {
             case "+":
@@ -341,6 +378,8 @@ class ViewController: UIViewController {
     }
     
     @objc func equalButtonPressed(button: UIButton) {
+        button.backgroundColor = .orange
+        button.setTitleColor(.white, for: .normal)
         currentNumber = Double(inputDisplayLabel.text!)!
         if mathOperation == "+"{
             let result = firstNumber + currentNumber
@@ -366,7 +405,14 @@ class ViewController: UIViewController {
         isTypingANumber = false
     }
     
+    @objc func orangeButtonUnTapped(button: UIButton){
+        button.backgroundColor = .white
+        button.setTitleColor(.orange, for: .normal)
+    }
+    
      @objc func getPokemon(button: UIButton){
+        button.backgroundColor = .lightGray
+        button.setTitleColor(.black, for: .normal)
         if inputDisplayLabel.text == "Digimon, Really just use the Pokemon Button!"{
             pokemonImageView.image = UIImage(named: "pokemonLogo")
         } else {
